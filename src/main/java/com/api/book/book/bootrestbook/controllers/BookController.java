@@ -21,6 +21,8 @@ public class BookController {
 	/*
 	 * @RequestMapping(value ="/books", method= RequestMethod.GET)
 	 */
+	
+	//Get all book handler 
 	@GetMapping("/books")
 	public List<Book> getBooks() {
 
@@ -28,11 +30,14 @@ public class BookController {
 
 	}
 
+	//get single book handler
+
 	@GetMapping("/books/{id}")
 	public Book getBook(@PathVariable("id") int id) {
 		return bookService.getBookById(id);
 
 	}
+	
 	
 	@PostMapping("/books")
 	public Book addBook(@RequestBody Book book) {
